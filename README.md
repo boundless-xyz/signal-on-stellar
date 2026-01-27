@@ -4,7 +4,7 @@ A [Signal: Ethereum](https://signal.boundless.network/) Zk light-client on Stell
 
 By retrieving proofs of consensus from Boundless network and submitting them to this contract, this allows Stellar to efficiently follow the Ethereum chain and trustlessly read any of its state or transactions.
 
-> [!INFO]
+> [!NOTE]
 > Testnet deployment is live at [CDSTMIXJVKI4ZVP4QV4POCVXGMUR2CG6IE2BT65ZOGRMZ445JX6NIKTA](https://lab.stellar.org/r/testnet/contract/CDSTMIXJVKI4ZVP4QV4POCVXGMUR2CG6IE2BT65ZOGRMZ445JX6NIKTA)
 
 > [!IMPORTANT]
