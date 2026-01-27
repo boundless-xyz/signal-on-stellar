@@ -1,11 +1,14 @@
 # Signal on Stellar
 
-Verify [Ethereum finality proofs](https://signal.boundless.network/) using the RISC Zero verifier enabled by Stellar X-Ray
+A [Signal: Ethereum](https://signal.boundless.network/) Zk light-client on Stellar!
 
-Testnet deployment is live at [CDSTMIXJVKI4ZVP4QV4POCVXGMUR2CG6IE2BT65ZOGRMZ445JX6NIKTA](https://lab.stellar.org/r/testnet/contract/CDSTMIXJVKI4ZVP4QV4POCVXGMUR2CG6IE2BT65ZOGRMZ445JX6NIKTA)
+By retrieving proofs of consensus from Boundless network and submitting them to this contract, this allows Stellar to efficiently follow the Ethereum chain and trustlessly read any of its state or transactions.
+
+> [!INFO]
+> Testnet deployment is live at [CDSTMIXJVKI4ZVP4QV4POCVXGMUR2CG6IE2BT65ZOGRMZ445JX6NIKTA](https://lab.stellar.org/r/testnet/contract/CDSTMIXJVKI4ZVP4QV4POCVXGMUR2CG6IE2BT65ZOGRMZ445JX6NIKTA)
 
 > [!IMPORTANT]
-> This does not enforce the link between epochs so do not treat the verified block roots as part of the canonical chain. This is for demonstration purposes only
+> This is currently for demo purposes only and has not undergone a security audit
 
 ## Usage
 
@@ -15,7 +18,7 @@ Generate a new testnet signer and fund
 stellar keys generate submitter --network testnet --fund
 ```
 
-Submit a signal proof
+Submit a signal proof. For example:
 
 ```shell
 stellar contract invoke \
@@ -28,15 +31,13 @@ stellar contract invoke \
   --journal 00000000000000000000000000000000000000000000000000000000000675a0d87a8b0faf867d9521ddb155f3c58b9523367444ac5b8822169c06cd71233ee6000000000000000000000000000000000000000000000000000000000006759f7f3d03a51f303b1f1855592276e609c932cc0f91518ca4d959c38685e9f90a6900000000000000000000000000000000000000000000000000000000000675a130da8e4de5b3733b25e850b7dd457886862f7657e3ad0d54246b76ac9676396300000000000000000000000000000000000000000000000000000000000675a0d87a8b0faf867d9521ddb155f3c58b9523367444ac5b8822169c06cd71233ee60000000000000000000000000000000000000000000000000000000000ceb400
 ```
 
-If the proof verifies successfully this will return `true`. Otherwise you will see an error event log.
-
-You can 
+If the proof verifies successfully and builds upon the previous state this will return `true`. Otherwise you will see an error event log.
 
 ## Deployment
 
 A RISC0 verifier is deployed on testnet to [CANYRGDRBQPXPNEZRXDPETY7L4YVDTKTPP4QKHKZGMMHB74IR5HKIUXD](https://lab.stellar.org/r/testnet/contract/CANYRGDRBQPXPNEZRXDPETY7L4YVDTKTPP4QKHKZGMMHB74IR5HKIUXD)
 
-Deploy a new Signal verifier with
+Deploy a new Signal verifier with:
 
 ```shell
 cd contracts/signal-receiver
