@@ -1,3 +1,5 @@
+> **Archived:** This Stellar testnet demo is no longer maintained and is preserved for reference. For context on the proving protocol pause, see the [Boundless Foundation announcement](https://boundlessfdn.org/blog/zkc-the-ai-access-coin).
+
 # Signal on Stellar
 
 A [Signal: Ethereum](https://signal.boundless.network/) Zk light-client on Stellar!
